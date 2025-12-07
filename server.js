@@ -21,9 +21,23 @@ if (!fs.existsSync(dataDir)) {
   fs.mkdirSync(dataDir, { recursive: true });
 }
 
-// Initialiser le fichier JSON s'il n'existe pas
-if (!fs.existsSync(DATA_FILE)) {
-  fs.writeFileSync(DATA_FILE, JSON.stringify({}, null, 2));
+// Réinitialiser le fichier JSON à chaque démarrage (par défaut en production)
+// Pour conserver les données entre les redémarrages, définir RESET_DATA_ON_START=false
+const RESET_DATA_ON_START = process.env.RESET_DATA_ON_START !== 'false';
+const INITIAL_DATA = {};
+
+if (RESET_DATA_ON_START) {
+  // Toujours réinitialiser le fichier au démarrage
+  fs.writeFileSync(DATA_FILE, JSON.stringify(INITIAL_DATA, null, 2));
+  console.log('📝 Fichier de données réinitialisé');
+} else {
+  // Initialiser seulement s'il n'existe pas
+  if (!fs.existsSync(DATA_FILE)) {
+    fs.writeFileSync(DATA_FILE, JSON.stringify(INITIAL_DATA, null, 2));
+    console.log('📝 Fichier de données créé');
+  } else {
+    console.log('📝 Fichier de données existant conservé');
+  }
 }
 
 // Matchs prédéfinis

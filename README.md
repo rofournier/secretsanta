@@ -55,6 +55,11 @@ npm start
 
 Le serveur démarre sur le port 3000 (ou le port défini dans la variable d'environnement PORT).
 
+**Note** : Par défaut, le fichier `data/messages.json` est **réinitialisé à chaque démarrage** du serveur. Pour conserver les messages entre les redémarrages en développement, définir la variable d'environnement :
+```bash
+RESET_DATA_ON_START=false npm start
+```
+
 ## 🌐 Déploiement sur Surge
 
 ### Prérequis
@@ -123,8 +128,11 @@ Si vous préférez configurer manuellement :
 
 - **Port** : Le serveur utilise automatiquement `process.env.PORT` (déjà configuré ✓)
 - **Dossier data** : Le dossier `data/` est créé automatiquement au démarrage
+- **Réinitialisation des données** : Par défaut, le fichier `messages.json` est **réinitialisé à chaque déploiement/redémarrage** pour un Secret Santa frais. Pour conserver les données, définir `RESET_DATA_ON_START=false` dans les variables d'environnement Render.
 - **Images** : Assurez-vous d'avoir ajouté les photos dans le dossier `images/` avant de déployer
-- **Variables d'environnement** : Aucune variable d'environnement requise pour le fonctionnement de base
+- **Variables d'environnement** : 
+  - `RESET_DATA_ON_START` : `true` par défaut (réinitialise les messages à chaque démarrage)
+  - `NODE_ENV` : `production` (défini automatiquement par render.yaml)
 - **Health Check** : Render vérifie automatiquement la route `/` pour s'assurer que le service est en ligne
 
 ## 🎨 Personnalisation
