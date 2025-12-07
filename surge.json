@@ -1,0 +1,11 @@
+{
+  "project": "secretsantav2",
+  "domain": "secretsanta-v2.surge.sh",
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/index.html"
+    }
+  ]
+}
+

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secret Santa - Ton message</title>
+    <link rel="stylesheet" href="message.css">
+</head>
+<body>
+    <div class="snowflakes" aria-hidden="true">
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1 class="title">
+                <span class="sparkle">💌</span>
+                Ton message
+                <span class="sparkle">💌</span>
+            </h1>
+            <p class="subtitle">Laisse un message pour ton Secret Santa (optionnel)</p>
+        </div>
+
+        <div class="message-card">
+            <div class="card-content">
+                <label for="messageText" class="label">Ton message :</label>
+                <textarea 
+                    id="messageText" 
+                    class="message-input" 
+                    placeholder="Écris ici ta liste de souhaits, un message d'amour, ou tout ce que tu veux partager avec ton Secret Santa... 🎁"
+                    rows="8"
+                ></textarea>
+                <div class="char-count">
+                    <span id="charCount">0</span> / 1000 caractères
+                </div>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button class="btn btn-secondary" id="skipBtn">
+                <span>Passer</span>
+            </button>
+            <button class="btn btn-primary" id="sendBtn">
+                <span>Envoyer</span>
+                <span class="btn-sparkle">✨</span>
+            </button>
+        </div>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Envoi en cours...</p>
+        </div>
+    </div>
+
+    <div class="lights">
+        <div class="light red"></div>
+        <div class="light blue"></div>
+        <div class="light green"></div>
+        <div class="light yellow"></div>
+        <div class="light red"></div>
+        <div class="light blue"></div>
+        <div class="light green"></div>
+        <div class="light yellow"></div>
+    </div>
+
+    <script src="message.js"></script>
+</body>
+</html>
+

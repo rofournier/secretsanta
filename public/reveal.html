@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secret Santa - Révélation</title>
+    <link rel="stylesheet" href="reveal.css">
+</head>
+<body>
+    <div class="snowflakes" aria-hidden="true">
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1 class="title">
+                <span class="sparkle">🎁</span>
+                Révélation
+                <span class="sparkle">🎁</span>
+            </h1>
+            <p class="subtitle" id="subtitle">Touche la carte pour révéler ton Secret Santa</p>
+        </div>
+
+        <div class="card-container">
+            <div class="card" id="card">
+                <div class="card-front">
+                    <div class="card-back-pattern"></div>
+                    <div class="card-content-front">
+                        <div class="santa-icon">🎅</div>
+                        <p class="card-text">Secret Santa</p>
+                        <p class="card-hint">Touche pour révéler</p>
+                    </div>
+                </div>
+                <div class="card-back">
+                    <div class="card-content-back" id="cardContent">
+                        <div class="revealed-content">
+                            <div class="revealed-image-container">
+                                <img id="revealedImage" class="revealed-image" src="" alt="">
+                            </div>
+                            <h2 class="revealed-name" id="revealedName"></h2>
+                            <div class="revealed-message" id="revealedMessage"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="confetti-container" id="confettiContainer"></div>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Chargement...</p>
+        </div>
+    </div>
+
+    <div class="lights">
+        <div class="light red"></div>
+        <div class="light blue"></div>
+        <div class="light green"></div>
+        <div class="light yellow"></div>
+        <div class="light red"></div>
+        <div class="light blue"></div>
+        <div class="light green"></div>
+        <div class="light yellow"></div>
+    </div>
+
+    <script src="reveal.js"></script>
+</body>
+</html>
+

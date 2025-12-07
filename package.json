@@ -1,0 +1,19 @@
+{
+  "name": "secretsanta-v2",
+  "version": "2.0.0",
+  "description": "Secret Santa familial avec animations de Noël",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["secret-santa", "noel", "family"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5"
+  }
+}
+
